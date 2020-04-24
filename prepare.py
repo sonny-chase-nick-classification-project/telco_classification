@@ -44,6 +44,7 @@ def drop_columns(df):
 
 def X_label_encode(df):
     le = LabelEncoder()
+    df['gender'] = le.fit_transform(df.gender)
     df['online_security'] = le.fit_transform(df.online_security)
     df['online_backup'] = le.fit_transform(df.online_backup)
     df['device_protection'] = le.fit_transform(df.device_protection)
