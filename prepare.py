@@ -52,6 +52,7 @@ def X_label_encode(df):
     df['streaming_tv'] = le.fit_transform(df.streaming_tv)
     df['streaming_movies'] = le.fit_transform(df.streaming_movies)
     df['paperless_billing'] = le.fit_transform(df.paperless_billing)
+    df['churn'] = le.fit_transform(df.churn)
     return df
 
 def y_label_encode(df):
@@ -105,9 +106,9 @@ def split_telco(df):
     train, validate = sklearn.model_selection.train_test_split(train, train_size=.80, random_state=123)
 
     # split into X and y
-    X_train, y_train = train.drop(columns='churn'), train[['churn']]
-    X_validate, y_validate = validate.drop(columns='churn'), validate[['churn']]
-    X_test, y_test = test.drop(columns='churn'), test[['churn']]
+    X_train, y_train = train, train[['churn']]
+    X_validate, y_validate = validate, validate[['churn']]
+    X_test, y_test = test, test[['churn']]
     
     X_train = X_label_encode(X_train)
     X_validate = X_label_encode(X_validate)
