@@ -61,11 +61,11 @@ def y_label_encode(df):
     return df
 
 def one_hot_encoder(df):
-    one_hot = OneHotEncoder(categories = 'auto', sparse = False)
+    one_hot = OneHotEncoder(sparse = False)
     payment_encoded = one_hot.fit_transform(df[['payment_type']])
-    payment_labels = list(np.array(df.payment_type.value_counts().index))
+    payment_labels = list(df.payment_type.value_counts().sort_index().index)
     payment_encoded_df = pd.DataFrame(payment_encoded, columns = payment_labels, index = df.index)
-    
+
     internet_encoded = one_hot.fit_transform(df[['internet_service_type']])
     internet_labels = list(df.internet_service_type.value_counts().sort_index().index)
     internet_encoded_df = pd.DataFrame(internet_encoded, columns = internet_labels, index = df.index)
@@ -106,9 +106,9 @@ def split_telco(df):
     train, validate = sklearn.model_selection.train_test_split(train, train_size=.80, random_state=123)
 
     # split into X and y
-    X_train, y_train = train, train[['churn']]
-    X_validate, y_validate = validate, validate[['churn']]
-    X_test, y_test = test, test[['churn']]
+    X_train, y_train = train, train.churn
+    X_validate, y_validate = validate, validate.churn
+    X_test, y_test = test, test.churn
     
     X_train = X_label_encode(X_train)
     X_validate = X_label_encode(X_validate)
