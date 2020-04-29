@@ -24,19 +24,9 @@ def phone_lines(df):
     return df
 
 def partner_dependents(df):
-    partner_and_dependents = []
-    
-    for i in range(len(df.partner)):
-        if df.partner[i] == 'No' and df.dependents[i] == 'No':
-            partner_and_dependents.append(0)
-        elif df.partner[i] == 'Yes' and df.dependents[i] == 'No':
-            partner_and_dependents.append(1)
-        elif df.partner[i] == "No" and df.dependents[i] == 'Yes':
-            partner_and_dependents.append(2)
-        elif df.partner[i] == 'Yes' and df.dependents[i] == 'Yes':
-            partner_and_dependents.append(3)
-    
-    df['partner_and_dependents'] = partner_and_dependents
+    partner = [0 if i == 'No' else 1 for i in df.partner]
+    dependents = [2 if i == 'Yes' else 0 for i in df.dependents]
+    df['partner_and_dependents'] = [partner[i] + dependents[i] for i in range(len(partner))]
     return df
 
 def drop_columns(df):
