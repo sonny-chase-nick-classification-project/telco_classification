@@ -130,16 +130,6 @@ Must use your own env file to access data.
 
 ***
 
-## *Hypothesis Testing*
-
-Lets do some hypothesis testing 
-
-* Ho:
-
-* Ha: 
-
-***
-
 ## *Technical Skills used*
 
 * Python
