@@ -66,15 +66,15 @@ The ad hoc part includes plotting the distributions of individual variables and 
 
 Some items to consider:
 
-- [] split data to train/test
-- [] Handle Missing Values
-- [] Handle erroneous data and/or outliers you wish to address
-- [] encode variables as needed
-- [] scale data as needed
-- [] new feature that represents tenure in years
-- [] create single variable representing the information from phone_service and multiple_lines
-- [] do the same using dependents and partner
-- [] other ways to merge variables, such as streaming_tv & streaming_movies, online_security & online_backup
+- [X] split data to train/test
+- [X] Handle Missing Values
+- [X] Handle erroneous data and/or outliers you wish to address
+- [X] encode variables as needed
+- [X] scale data as needed
+- [X] new feature that represents tenure in years
+- [X] create single variable representing the information from phone_service and multiple_lines
+- [X] do the same using dependents and partner
+- [X] other ways to merge variables, such as streaming_tv & streaming_movies, online_security & online_backup
 
 prep.py: The reproducible part is the handling of missing values, fixing data integrity issues, changing data types, etc.
 
@@ -153,4 +153,14 @@ Lets do some hypothesis testing
 
 ## *Executive Summary*
 
-MORE TO COME
+The model we selected to move forward with is a Classification ML Algorithm, Logistic Regression. 
+
+The model is able to correctly predict 80% of customers who actually churn.
+
+Customers most likely to churn:
+
+- Month to month contract
+- Senior Citizens
+- Utilize Premium offerings
+
+Moving forward we should focus our CRM and marketing efforts on transitioning customers away from month-to-month contracts, strengthen our relationships with our Senior citizen customers, and further utilize our premium services to retain customers.
