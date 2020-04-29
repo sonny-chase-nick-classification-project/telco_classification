@@ -4,7 +4,9 @@
 
 ### *The Report*
 
-> Here's the link to the deliverable report requested from the team lead. It contains the slides, but not the verbal portion of the presentation. ***LINK TO FOLLOW***
+> Here's the link to the deliverable report requested from the team lead. It contains the slides, but not the verbal portion of the presentation. 
+
+https://docs.google.com/presentation/d/1nObaqS4VnmiCM28RdxW_XqJfoU9f-sAFba4UjRf3A00/edit?usp=sharing
 
 ## *Background*:
 
