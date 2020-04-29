@@ -155,4 +155,6 @@ Customers most likely to churn:
 - Senior Citizens
 - Utilize Premium offerings
 
+The initial Prediction CSV is in this repo, the code outlined in the notebook will produce the CSV as well.
+
 Moving forward we should focus our CRM and marketing efforts on transitioning customers away from month-to-month contracts, strengthen our relationships with our Senior citizen customers, and further utilize our premium services to retain customers.
